@@ -42,7 +42,9 @@ function clickButton(index) {
     }
     checkWinner();
     if (gameHasEnded) {
-      restartGame();
+      setTimeout(function () {
+        restartGame();
+      }, 0);
     }
   }
 }
@@ -78,7 +80,10 @@ const checkWinner = () => {
       xPositions.includes(9)) ||
     (xPositions.includes(3) && xPositions.includes(5) && xPositions.includes(7))
   ) {
-    winningAlert('X');
+    setTimeout(function () {
+      winningAlert('X');
+    }, 0);
+
     gameHasEnded = true;
   } else if (
     (oPositions.includes(1) &&
@@ -104,10 +109,14 @@ const checkWinner = () => {
       oPositions.includes(9)) ||
     (oPositions.includes(3) && oPositions.includes(5) && oPositions.includes(7))
   ) {
-    winningAlert('O');
+    setTimeout(function () {
+      winningAlert('O');
+    }, 0);
     gameHasEnded = true;
   } else if (buttonsClicked.length == 9) {
-    alert('Draw');
+    setTimeout(function () {
+      alert('Draw');
+    }, 0);
     gameHasEnded = true;
   }
 };
